@@ -46,7 +46,7 @@ public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.MarketView
         }
 
         holder.itemView.setOnClickListener(v -> {
-            Intent intent = new Intent(context, CategoriesActivity.class);
+            Intent intent = new Intent(context, CategoryActivity.class);
             intent.putExtra("MARKET_ID", market.getMarketId());
             context.startActivity(intent);
         });

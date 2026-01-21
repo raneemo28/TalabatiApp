@@ -25,14 +25,20 @@ public class Market {
     public int getMarketPhoneNum() {
         return marketPhoneNum;
     }
+    public LocalTime getMarketClosingTime() {
+        return marketClosingTime;
+    }
+    public LocalTime getMarketOpeningTime() {
+        return marketOpeningTime;
+    }
 
+
+
+    public int getMarketImageResource() { return marketImageResource; }
     public void setMarketAvailable() {
         LocalTime timeNow = LocalTime.now();
         if (timeNow.isBefore(marketOpeningTime) || timeNow.isAfter(marketClosingTime)) this.marketAvailable=false;
         else this.marketAvailable=true;
-    }
-    public int getMarketImageResource() {
-        return marketImageResource;
     }
 
     public boolean isMarketAvailable() {
@@ -40,8 +46,8 @@ public class Market {
         return marketAvailable;
     }
 
-    public Market(int marketId, String marketName, int marketImageResource, String marketLocation,
-                  int marketPhoneNum, LocalTime marketOpeningTime, LocalTime marketClosingTime)
+    public Market(int marketId, String marketName,  String marketLocation,
+                  LocalTime marketOpeningTime, LocalTime marketClosingTime, int marketPhoneNum, int marketImageResource)
     {
         this.marketId=marketId;
         this.marketName=marketName;
