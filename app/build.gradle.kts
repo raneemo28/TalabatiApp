@@ -3,14 +3,14 @@ plugins {
 }
 
 android {
-    namespace = "com.example.talabat"
+    namespace = "com.example.talabatiapp"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.example.talabat"
-        minSdk = 21
+        applicationId = "com.example.talabatiapp"
+        minSdk = 24
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -28,12 +28,14 @@ android {
         }
     }
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
 }
 
 dependencies {
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -41,4 +43,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation("androidx.core:core-splashscreen:1.0.1")
 }
